@@ -5,10 +5,10 @@ class DrinksController < ApplicationController
   end
 
   def create
-    if Drink.where(name: drink_params[:name]).first
-      render json: {drink_not_saved: "Drink already exists"}
-      return
-    end
+    # if Drink.where(name: drink_params[:name]).first
+    #   render json: {drink_not_saved: "Drink already exists"}
+    #   return
+    # end
     drink = Drink.new(drink_params)
     if drink.save
       render json: {drink_saved: drink_params}
